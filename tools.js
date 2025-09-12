@@ -1,28 +1,19 @@
 const tools = [
   {id:1, name:"ChatGPT", logo:"https://openai.com/favicon.ico", short:"Conversational AI by OpenAI", category:"chat", tags:["chat","assistant"], price:"Free", url:"https://chat.openai.com", desc:"A conversational AI for chat, drafting, and coding assistance."},
   {id:2, name:"Claude", logo:"https://claude.ai/favicon.ico", short:"Anthropic’s conversational AI", category:"chat", tags:["chat","assistant"], price:"Free", url:"https://claude.ai", desc:"Claude is a conversational AI by Anthropic designed for helpful, honest, and safe interactions."},
-  {id:3, name:"Jasper", logo:"https://www.jasper.ai/favicon.ico", short:"AI writing assistant", category:"writing", tags:["writing","assistant"], price:"Paid", url:"https://www.jasper.ai", desc:"An AI writing assistant that helps you create high-quality content quickly."},
+  
   {id:4, name:"DALL·E", logo:"https://openai.com/favicon.ico", short:"Image generation by OpenAI", category:"image", tags:["image","generation"], price:"Paid", url:"https://openai.com/dall-e", desc:"Generate images from textual descriptions using OpenAI's DALL·E."},
-  {id:5, name:"Midjourney", logo:"https://www.midjourney.com/favicon.ico", short:"AI image generation", category:"image", tags:["image","generation"], price:"Paid", url:"https://www.midjourney.com", desc:"Create stunning images from text prompts with Midjourney."},
-  {id:6, name:"Runway", logo:"https://runwayml.com/favicon.ico", short:"AI video editing", category:"video", tags:["video","editing"], price:"Freemium", url:"https://runwayml.com", desc:"A creative toolkit powered by artificial intelligence."},
-  {id:7, name:"Descript", logo:"https://www.descript.com/favicon.ico", short:"Audio & video editing", category:"audio", tags:["audio","video","editing"], price:"Freemium", url:"https://www.descript.com", desc:"An all-in-one audio and video editing tool."},
-  {id:8, name:"Synthesia", logo:"https://www.synthesia.io/favicon.ico", short:"AI video generation", category:"video", tags:["video","generation"], price:"Paid", url:"https://www.synthesia.io", desc:"Create AI-generated videos from text in minutes."},
-  {id:9, name:"Copy.ai", logo:"https://www.copy.ai/favicon.ico", short:"AI copywriting", category:"writing", tags:["writing","copywriting"], price:"Freemium", url:"https://www.copy.ai", desc:"Generate marketing copy, blog posts, and more with AI."},
-  {id:10, name:"Writesonic", logo:"https://writesonic.com/favicon.ico", short:"AI writing assistant", category:"writing", tags:["writing","assistant"], price:"Freemium", url:"https://writesonic.com", desc:"AI-powered writing assistant for creating high-quality content."},
-  {id:11, name:"Frase", logo:"https://www.frase.io/favicon.ico", short:"AI content research", category:"writing", tags:["writing","research"], price:"Freemium", url:"https://www.frase.io", desc:"AI-powered content research and writing platform."},
-  {id:12, name:"CopySmith", logo:"https://copysmith.ai/favicon.ico", short:"AI copywriting", category:"writing", tags:["writing","copywriting"], price:"Freemium", url:"https://copysmith.ai", desc:"Generate high-quality marketing copy with AI."},
-  {id:13, name:"Scalenut", logo:"https://scalenut.com/favicon.ico", short:"AI content creation", category:"writing", tags:["writing","content creation"], price:"Freemium", url:"https://scalenut.com", desc:"AI-powered content creation platform."},
+  
+  
   {id:14, name:"INK Editor", logo:"https://inkforall.com/favicon.ico", short:"AI writing assistant", category:"writing", tags:["writing","assistant"], price:"Freemium", url:"https://inkforall.com", desc:"AI writing assistant for creating high-quality content."},
-  {id:15, name:"Rytr", logo:"https://rytr.me/favicon.ico", short:"AI writing assistant", category:"writing", tags:["writing","assistant"], price:"Freemium", url:"https://rytr.me", desc:"AI writing assistant to help you create content quickly."},
-  {id:16, name:"Pictory", logo:"https://pictory.ai/favicon.ico", short:"AI video editor", category:"video", tags:["video","editor"], price:"Freemium", url:"https://pictory.ai", desc:"Create short, highly-sharable branded videos from long content."},
-  {id:17, name:"Lumen5", logo:"https://www.lumen5.com/favicon.ico", short:"AI video creation", category:"video", tags:["video","creation"], price:"Freemium", url:"https://www.lumen5.com", desc:"Turn text into engaging videos with AI."},
+  
   {id:18, name:"QuillBot", logo:"https://quillbot.com/favicon.ico", short:"AI paraphrasing tool", category:"writing", tags:["writing","paraphrasing"], price:"Freemium", url:"https://quillbot.com", desc:"Paraphrase and rewrite your content using AI."},
-  {id:19, name:"Grammarly", logo:"https://www.grammarly.com/favicon.ico", short:"Writing assistant", category:"writing", tags:["writing","assistant"], price:"Freemium", url:"https://www.grammarly.com", desc:"AI-powered writing assistant to help you write better."},
+  
   {id:20, name:"Hemingway Editor", logo:"https://www.hemingwayapp.com/favicon.ico", short:"Writing editor", category:"writing", tags:["writing","editor"], price:"Paid", url:"https://www.hemingwayapp.com", desc:"Write in a clear, concise, and easy-to-read style."},
-  {id:21, name:"Wordtune", logo:"https://www.wordtune.com/favicon.ico", short:"AI writing assistant", category:"writing", tags:["writing","assistant"], price:"Freemium", url:"https://www.wordtune.com", desc:"AI-powered writing assistant to help you write better."},
+  
   {id:22, name:"Scribe", logo:"https://scribehow.com/favicon.ico", short:"AI documentation", category:"productivity", tags:["productivity","documentation"], price:"Freemium", url:"https://scribehow.com", desc:"Create step-by-step guides with AI."},
   {id:23, name:"Otter.ai", logo:"https://otter.ai/favicon.ico", short:"AI transcription", category:"audio", tags:["audio","transcription"], price:"Freemium", url:"https://otter.ai", desc:"Transcribe meetings and interviews with AI."},
   {id:24, name:"Sonix", logo:"https://sonix.ai/favicon.ico", short:"AI transcription", category:"audio", tags:["audio","transcription"], price:"Paid", url:"https://sonix.ai", desc:"Transcribe audio and video files with AI."},
-  {id:25, name:"Trint", logo:"https://trint.com/favicon.ico", short:"AI transcription", category:"audio", tags:["audio","transcription"], price:"Paid", url:"https://trint.com", desc:"Transcribe and edit audio and video files with AI."},
+  
 
 ];
