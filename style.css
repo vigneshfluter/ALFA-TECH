@@ -94,3 +94,58 @@ footer{margin-top:18px; color:var(--muted); font-size:13px; text-align:center;}
   .hamburger{display:block}
   .search input{width:140px}
 }
+/* === Preloader === */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px; /* space between logo and spinner */
+  animation: fadeInUp 1s ease;
+}
+
+.preloader-logo {
+  width: 100px;
+  height: auto;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.spinner {
+  width: 55px;
+  height: 55px;
+  border: 5px solid rgba(0,0,0,0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

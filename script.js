@@ -91,3 +91,11 @@ renderTools();
 document.getElementById('menuBtn').onclick=()=>{
   document.getElementById('mainNav').classList.toggle('show');
 };
+// Preloader hide after page load
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.classList.add("hide");
+    setTimeout(() => preloader.remove(), 600); // remove from DOM after fadeout
+  }
+});
