@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — ALFA AI Tools Directory</title>
+  <meta name="description" content="Contact ALFA AI Tools Directory for support, feedback, or inquiries." />
+  <link rel="icon" href="favicon-512.png" type="image/png" />
+  <style>
+    :root{
+      --primary:#811719;
+      --secondary:#c4954f;
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --muted:#555;
+      --gap:18px;
+      --radius:14px;
+      --maxw:1150px;
+      --glass: rgba(255,255,255,0.6);
+      --text:#111;
+    }
+
+    *{box-sizing:border-box; transition:all .25s ease;}
+    body{margin:0; font-family:Inter, system-ui, sans-serif; background:var(--bg); color:var(--text);
+      -webkit-font-smoothing:antialiased; padding:28px; display:flex; justify-content:center;}
+    .wrap{width:100%; max-width:var(--maxw); animation:fadeIn .8s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)}}
+
+    /* Header */
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px; flex-wrap:wrap; position:relative;}
+    .logo-wrap{display:flex; align-items:center; gap:10px;}
+    .logo-wrap img{height:70px; width:auto; transition:transform .3s;}
+    .logo-wrap img:hover{transform:scale(1.05);}
+    h1{margin:0;font-size:22px;color:var(--primary); font-weight:700;}
+    .lead{color:var(--muted); font-size:14px}
+
+    /* Navigation */
+    nav{display:flex; gap:16px; align-items:center; transition:0.3s;}
+    nav a{text-decoration:none; color:var(--text); font-size:14px; padding:6px 10px; border-radius:8px; position:relative;}
+    nav a::after{content:""; position:absolute; bottom:0; left:0; width:0%; height:2px; background:var(--secondary); transition:width .3s;}
+    nav a:hover{color:var(--primary);}
+    nav a:hover::after{width:100%;}
+    .hamburger{display:none; font-size:22px; cursor:pointer; background:none; border:none; color:var(--text)}
+
+    /* Contact Section */
+    .contact-section{display:flex; flex-wrap:wrap; gap:40px; margin-top:28px;}
+    .contact-info, .contact-form{background:var(--card); border-radius:var(--radius); padding:24px; flex:1; min-width:280px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08); transition:transform .3s, box-shadow .3s;}
+    .contact-info:hover, .contact-form:hover{transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+    .contact-info h2, .contact-form h2{margin-top:0; color:var(--primary);}
+    .contact-info p{color:var(--muted); line-height:1.6; transition:color .3s;}
+    .contact-info div{margin-top:12px; display:flex; align-items:center; gap:10px; font-size:14px;}
+    .contact-info div span{font-weight:600; color:var(--primary);}
+
+    /* Form */
+    form{display:flex; flex-direction:column; gap:12px;}
+    input, textarea{padding:12px; border:1px solid #ddd; border-radius:8px; font-size:14px; outline:none; transition:0.3s;}
+    input:focus, textarea:focus{border-color:var(--secondary); box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+    textarea{resize:none; min-height:120px;}
+    .btn{padding:12px 18px; border-radius:10px; background:var(--primary); color:#fff; border:none; cursor:pointer; font-size:14px; transition:0.3s;}
+    .btn:hover{background:var(--secondary); transform:scale(1.05);}
+
+    /* Footer */
+    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center;}
+
+    /* Animations for entrance */
+    .contact-info, .contact-form{opacity:0; transform:translateY(20px); animation:fadeUp 0.6s forwards; animation-delay:0.2s;}
+    .contact-form{animation-delay:0.4s;}
+    @keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+
+    /* Responsive */
+    @media(max-width:1024px){.contact-section{gap:28px;}}
+    @media(max-width:768px){
+      nav{display:none; flex-direction:column; align-items:flex-start; margin-top:12px}
+      nav.show{display:flex}
+      .hamburger{display:block}
+      .wrap{padding:14px;}
+      .contact-section{flex-direction:column;}
+      .logo-wrap{flex-direction:column; align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Site Logo" />
+        <div>
+          <h1>ALFA AI Tools Directory</h1>
+          <div class="lead">Reach out to us for support or feedback.</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="hamburger" id="menuBtn">☰</button>
+        <nav id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="categories.html">Categories</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="contact-section">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>We’d love to hear from you! Reach out for support, feedback, or inquiries and we’ll get back to you promptly.</p>
+        <div><span>Email:</span> support@alfai.com</div>
+        <div><span>Phone:</span> +1 234 567 890</div>
+        <div><span>Address:</span> 123 AI Street, Tech City</div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>© 2025 ALFA AI Tools Directory. All rights reserved.</footer>
+  </div>
+
+  <script>
+    // Responsive menu toggle
+    document.getElementById('menuBtn').onclick = ()=>{
+      document.getElementById('mainNav').classList.toggle('show');
+    };
+
+    // Form submission
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you! Your message has been sent.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

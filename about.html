@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — ALFA AI Tools Directory</title>
+<meta name="description" content="About ALFA AI Tools Directory, mission, team, and gallery." />
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{
+  --primary:#811719;
+  --secondary:#c4954f;
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --muted:#555;
+  --gap:18px;
+  --radius:14px;
+  --maxw:1150px;
+  --glass: rgba(255,255,255,0.6);
+  --text:#111;
+}
+
+*{box-sizing:border-box; transition:all .25s ease;}
+body{margin:0; font-family:Inter, system-ui, sans-serif; background:var(--bg); color:var(--text);
+  -webkit-font-smoothing:antialiased; padding:28px; display:flex; justify-content:center;}
+.wrap{width:100%; max-width:var(--maxw); animation:fadeIn .8s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)}}
+
+/* Header */
+header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px; flex-wrap:wrap; position:relative;}
+.logo-wrap{display:flex; align-items:center; gap:10px;}
+.logo-wrap img{height:70px; width:auto; transition:transform .3s;}
+.logo-wrap img:hover{transform:scale(1.05);}
+h1{margin:0;font-size:22px;color:var(--primary); font-weight:700;}
+.lead{color:var(--muted); font-size:14px}
+
+/* Navigation */
+nav{display:flex; gap:16px; align-items:center; transition:0.3s;}
+nav a{text-decoration:none; color:var(--text); font-size:14px; padding:6px 10px; border-radius:8px; position:relative;}
+nav a::after{content:""; position:absolute; bottom:0; left:0; width:0%; height:2px; background:var(--secondary); transition:width .3s;}
+nav a:hover{color:var(--primary);}
+nav a:hover::after{width:100%;}
+nav a.active{color:var(--primary); font-weight:600;}
+.hamburger{display:none; font-size:22px; cursor:pointer; background:none; border:none; color:var(--text)}
+
+/* Sections */
+section{margin-bottom:60px; padding:0 20px;}
+.section-title{color:var(--primary); font-size:28px; margin-bottom:20px; text-align:center; position:relative;}
+.section-title::after{content:""; display:block; width:60px; height:3px; background:var(--secondary); margin:12px auto 0; border-radius:2px;}
+
+/* Text blocks */
+.text-block{max-width:900px; margin:auto; font-size:16px; color:var(--muted); line-height:1.6; text-align:center;}
+.text-left{text-align:left; margin-top:20px;}
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; margin-top:20px; }
+.gallery img { width:100%; border-radius:var(--radius); box-shadow:0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; cursor:pointer; opacity:0; transform:translateY(20px); }
+.gallery img:hover { transform: scale(1.05); box-shadow:0 12px 26px rgba(0,0,0,0.15); }
+@keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+.gallery img:nth-child(1){animation:fadeUp .5s forwards;}
+.gallery img:nth-child(2){animation:fadeUp .6s forwards;}
+.gallery img:nth-child(3){animation:fadeUp .7s forwards;}
+.gallery img:nth-child(4){animation:fadeUp .8s forwards;}
+.gallery img:nth-child(5){animation:fadeUp .9s forwards;}
+.gallery img:nth-child(6){animation:fadeUp 1s forwards;}
+
+/* Footer */
+footer{margin-top:40px; text-align:center; color:var(--muted); font-size:13px;}
+
+/* Responsive */
+@media(max-width:1024px){.gallery{grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;}}
+@media(max-width:768px){
+  .wrap{padding:14px;}
+  .logo-wrap{flex-direction:column; align-items:flex-start;}
+  nav{display:none; flex-direction:column; align-items:flex-start; margin-top:12px;}
+  nav.show{display:flex;}
+  h1{font-size:20px;}
+  .section-title{font-size:24px;}
+  .text-block{font-size:15px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Site Logo" />
+      <div>
+        <h1>ALFA AI Tools Directory</h1>
+        <div class="lead">Search, compare and explore the best AI tools.</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="hamburger" id="menuBtn">☰</button>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="categories.html">Categories</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section>
+      <h2 class="section-title">About ALFA AI Tools Directory</h2>
+      <p class="text-block">
+        ALFA AI Tools Directory is a modern platform dedicated to helping developers, creators, and businesses discover the best AI tools available today. 
+        Our mission is to provide a clean, searchable, and up-to-date directory of AI software and platforms to simplify your workflow and boost productivity.
+      </p>
+    </section>
+
+    <!-- Vision & Team -->
+    <section>
+      <h2 class="section-title">Our Vision & Team</h2>
+      <div class="text-block text-left">
+        <h3 style="color:var(--primary); margin-bottom:8px;">Our Vision</h3>
+        <p>We aim to be the go-to hub for AI enthusiasts—from conversational AI, image generation tools, to AI development platforms. 
+        Our goal is to simplify AI discovery, provide accurate information, and empower users to make informed decisions.</p>
+        <h3 style="color:var(--primary); margin-top:24px; margin-bottom:8px;">Our Team</h3>
+        <p>Our team is a mix of AI developers, designers, and enthusiasts passionate about technology and innovation. 
+        We continuously update the platform to bring you the latest AI tools, trends, and insights.</p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery">
+        <img src="gallery1.png" alt="Gallery Image 1">
+        <img src="gallery2.png" alt="Gallery Image 2">
+        <img src="gallery3.png" alt="Gallery Image 3">
+        <img src="gallery4.png" alt="Gallery Image 4">
+        <img src="gallery5.png" alt="Gallery Image 5">
+        <img src="gallery6.png" alt="Gallery Image 6">
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2 class="section-title">Contact Us</h2>
+      <p class="text-block">
+        Got feedback or suggestions? Reach out via 
+        <a href="mailto:support@alfaai.com" style="color:var(--secondary); text-decoration:none;">support@alfaai.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ALFA AI Tools Directory. All rights reserved.
+  </footer>
+</div>
+
+<script>
+// Mobile menu toggle
+document.getElementById('menuBtn').onclick = () => {
+  document.getElementById('mainNav').classList.toggle('show');
+};
+</script>
+</body>
+</html>
