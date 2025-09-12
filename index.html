@@ -8,84 +8,37 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
 <style>
-  /* Mobile-Responsive & Animations Enhancements */
+  /* Instagram icon styles */
+  .social-icons { display: flex; gap: 12px; align-items: center; }
+  .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--card); border-radius: 50%; border:1px solid #eee; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition: transform .25s, box-shadow .25s; }
+  .social-icons a:hover { transform: translateY(-4px); box-shadow:0 12px 26px rgba(0,0,0,0.12); }
+  .social-icons svg { width: 20px; height: 20px; fill: var(--primary); }
 
-  :root{
-    --primary:#811719;
-    --secondary:#c4954f;
-    --bg:#f9fafb;
-    --card:#ffffff;
-    --muted:#555;
-    --gap:18px;
-    --radius:14px;
-    --maxw:1150px;
-    --glass: rgba(255,255,255,0.6);
-    --text:#111;
+  /* Floating Download Button */
+  .download-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--secondary);
+    color: #fff;
+    padding: 16px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform .25s, box-shadow .25s, background .25s;
+    z-index: 999;
+  }
+  .download-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: var(--primary);
   }
 
-  * {box-sizing:border-box; transition:all .25s ease;}
-  body {margin:0; font-family:Inter, system-ui, sans-serif; background:var(--bg); color:var(--text); padding:28px; display:flex; justify-content:center; -webkit-font-smoothing:antialiased;}
-  .wrap {width:100%; max-width:var(--maxw); animation:fadeIn .8s ease;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)}}
-
-  header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px; flex-wrap:wrap; position:relative; z-index:100;}
-  .logo-wrap{display:flex; align-items:center; gap:10px;}
-  .logo-wrap img{height:70px; width:auto; transition:transform 0.3s;}
-  .logo-wrap img:hover{transform:scale(1.05);}
-  h1{margin:0;font-size:22px;color:var(--primary); font-weight:700;}
-  .lead{color:var(--muted); font-size:14px}
-
-  .controls{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
-  .search{background:var(--glass); border:1px solid rgba(0,0,0,0.1); padding:10px 12px; border-radius:var(--radius); display:flex; align-items:center; gap:8px; min-width:220px; backdrop-filter: blur(6px);}
-  .search:hover,.search:focus-within{background:#fff; border-color:var(--secondary); box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-  .search input{background:transparent; border:0; outline:none; color:var(--text); width:220px; font-size:14px}
-
-  nav{display:flex; gap:16px; align-items:center}
-  nav a{text-decoration:none; color:var(--text); font-size:14px; padding:6px 10px; border-radius:8px; position:relative;}
-  nav a::after{content:""; position:absolute; bottom:0; left:0; width:0%; height:2px; background:var(--secondary); transition:width .3s;}
-  nav a:hover{color:var(--primary);}
-  nav a:hover::after{width:100%;}
-  .hamburger{display:none; font-size:22px; cursor:pointer; background:none; border:none; color:var(--text)}
-
-  /* Filters */
-  .filters{display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:12px}
-  .pill{background:#f1f1f1; border:1px solid #ddd; padding:6px 12px; border-radius:999px; font-size:13px; cursor:pointer; color:var(--text);}
-  .pill:hover{background:#e8e8e8; border-color:var(--secondary); transform:scale(1.05);}
-  .pill.active{background:linear-gradient(90deg,var(--primary),var(--secondary)); color:#fff; border:none}
-
-  /* Grid & Cards */
-  main{margin-top:14px}
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:var(--gap)}
-  .card{background:var(--card); padding:16px; border-radius:var(--radius); border:1px solid #eee; cursor:pointer; transition:transform .3s, box-shadow .3s; box-shadow:0 3px 6px rgba(0,0,0,0.05);}
-  .card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 12px 26px rgba(0,0,0,0.12);}
-  .card h3{margin:0 0 6px 0; font-size:15px; color:var(--primary);}
-  .card p{margin:0; color:var(--muted); font-size:13px}
-  .tags{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
-  .tag{font-size:12px; padding:6px 8px; border-radius:8px; background:#f6f6f6; color:var(--muted); transition:0.2s;}
-  .tag:hover{background:var(--secondary); color:#fff; transform:scale(1.05);}
-
-  footer{margin-top:18px; color:var(--muted); font-size:13px; text-align:center;}
-
-  /* Modal */
-  .modal-backdrop{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,0.5); z-index:1000; animation:fadeIn .3s;}
-  .modal{background:#fff; padding:24px; border-radius:var(--radius); width:min(880px,96%); box-shadow:0 20px 50px rgba(0,0,0,0.2); border:1px solid #eee; color:var(--text); animation:zoomIn .4s;}
-  @keyframes zoomIn{from{opacity:0; transform:scale(.8);} to{opacity:1; transform:scale(1);}}
-  .modal h2{margin:0 0 8px 0; color:var(--primary);}
-  .modal .meta{color:var(--muted); font-size:13px; margin-bottom:12px}
-  .modal .actions{display:flex; gap:8px; margin-top:14px}
-  .btn{padding:9px 14px; border-radius:10px; background:var(--primary); color:#fff; border:none; cursor:pointer; font-size:14px;}
-  .btn:hover{background:var(--secondary);}
-  .btn.secondary{background:transparent; color:var(--primary); border:1px solid var(--secondary);}
-  .btn.secondary:hover{background:var(--secondary); color:#fff;}
-
-  /* Responsive */
-  @media (max-width:768px){
-    nav{display:none; flex-direction:column; align-items:flex-start; margin-top:12px}
-    nav.show{display:flex}
-    .hamburger{display:block}
-    .search input{width:140px}
-    .logo-wrap{flex-direction:column; align-items:flex-start;}
-    .wrap{padding:14px;}
+  @media(max-width:768px){
+    .social-icons{margin-top:10px;}
+    .download-btn{padding:12px 18px; font-size:14px;}
   }
 </style>
 </head>
@@ -101,6 +54,13 @@
   </div>
   <div class="controls">
     <div class="search">🔎 <input id="q" placeholder="Search tools..." /></div>
+    <div class="social-icons">
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M7 2C4.238 2 2 4.238 2 7v10c0 2.762 2.238 5 5 5h10c2.762 0 5-2.238 5-5V7c0-2.762-2.238-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.5a1 1 0 110 2 1 1 0 010-2z"/>
+        </svg>
+      </a>
+    </div>
     <button class="hamburger" id="menuBtn">☰</button>
     <nav id="mainNav">
       <a href="#">Home</a>
@@ -121,6 +81,9 @@
 </main>
 </div>
 
+<!-- Floating Download Button -->
+<a href="download.html" target="_blank" class="download-btn">Download All Tools</a>
+
 <!-- modal -->
 <div id="modalBackdrop" class="modal-backdrop">
   <div class="modal">
@@ -139,8 +102,8 @@
 <script src="tools.js"></script>
 <script src="script.js"></script>
 <script>
-  // Menu toggle
-  document.getElementById('menuBtn').onclick = ()=>{
+  // menu toggle
+  document.getElementById('menuBtn').onclick = () => {
     document.getElementById('mainNav').classList.toggle('show');
   };
 </script>
