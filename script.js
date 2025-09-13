@@ -1,4 +1,3 @@
-
 const grid=document.getElementById('grid'),
       q=document.getElementById('q'),
       categories=document.getElementById('categories');
@@ -99,3 +98,57 @@ window.addEventListener("load", () => {
     setTimeout(() => preloader.remove(), 600); // remove from DOM after fadeout
   }
 });
+
+/* ================================
+   NEW: Featured Tools Carousel Logic
+   ================================ */
+(function(){
+  const carousel = document.getElementById('carousel');
+  if (!carousel) return; // if section not on page
+
+  // Pick featured tools (first 5 for now)
+  const featured = tools.slice(0,5);
+
+  // Build track
+  const track = document.createElement('div');
+  track.className = 'carousel-track';
+  carousel.appendChild(track);
+
+  featured.forEach(t=>{
+    const item = document.createElement('div');
+    item.className = 'carousel-item';
+    item.innerHTML = `
+      <img src="${t.logo}" alt="${t.name} Logo">
+      <h3>${escapeHtml(t.name)}</h3>
+      <p>${escapeHtml(t.short)}</p>
+    `;
+    item.onclick = ()=>openModal(t);
+    track.appendChild(item);
+  });
+
+  let currentIndex = 0;
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+
+  function updateCarousel(){
+    const itemWidth = track.querySelector('.carousel-item').offsetWidth + 14; // width + gap
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+
+  prevBtn.addEventListener('click', ()=>{
+    currentIndex = Math.max(0, currentIndex - 1);
+    updateCarousel();
+  });
+  nextBtn.addEventListener('click', ()=>{
+    currentIndex = Math.min(featured.length - 1, currentIndex + 1);
+    updateCarousel();
+  });
+
+  // Auto-slide every 5s
+  setInterval(()=>{
+    currentIndex = (currentIndex + 1) % featured.length;
+    updateCarousel();
+  }, 5000);
+
+})();
+  

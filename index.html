@@ -187,6 +187,18 @@
     <div class="filters" id="categories"></div>
 
     <main>
+
+      <!-- ⭐ FEATURED TOOLS CAROUSEL (ADDED) -->
+      <section class="featured-section" aria-label="Featured tools">
+        <h2 style="margin:0 0 12px 0;color:var(--primary);font-size:20px;">🌟 Featured Tools</h2>
+        <div class="carousel-wrapper" style="display:flex;align-items:center;gap:10px;position:relative;">
+          <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous featured tool" style="all:unset;cursor:pointer;font-size:28px;padding:8px 12px;border-radius:8px;background:var(--card);box-shadow:0 6px 16px rgba(0,0,0,0.06);">‹</button>
+          <div id="carousel" class="carousel" style="display:flex;gap:14px;overflow:hidden;width:100%;align-items:center;"></div>
+          <button class="carousel-btn next" id="carouselNext" aria-label="Next featured tool" style="all:unset;cursor:pointer;font-size:28px;padding:8px 12px;border-radius:8px;background:var(--card);box-shadow:0 6px 16px rgba(0,0,0,0.06);">›</button>
+        </div>
+      </section>
+      <!-- end featured -->
+
       <section>
         <div id="grid" class="grid"></div>
       </section>
